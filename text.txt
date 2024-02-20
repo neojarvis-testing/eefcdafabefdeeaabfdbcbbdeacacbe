@@ -1,0 +1,21 @@
+sqlcmd -S localhost -U SA -Q "BACKUP DATABASE [appdb] TO DISK = N'/home/coder/project/workspace/appdb.sql'"
+sqlcmd -S localhost -U SA -Q "RESTORE DATABASE [gokuldb] FROM DISK = N'/home/coder/project/workspace/gokuldb.bak' WITH NOUNLOAD, REPLACE, NORECOVERY, STATS = 5"
+ alter database [appdb] set single_user with rollback immediate
+
+
+
+sqlcmd -S localhost -U SA -Q "RESTORE DATABASE [appdb] FROM DISK = N'/home/coder/project/workspace/gokuldb.bak'"
+
+
+sqlcmd -S 127.0.0.1 -d appdb -U SA -P examlyMssql@123 -i /home/coder/project/workspace/b.sql
+
+
+sqlcmd -S localhost -U SA -P examlyMssql@123 -Q "CREATE DATABASE IF NOT EXISTS appdb";
+
+
+sqlcmd -S localhost -U SA -Q "BACKUP DATABASE [app] TO DISK = N'/home/coder/project/workspace/ba1.bak'"
+
+temp
+chmod 777 /home/coder/project/workspace && sqlcmd -S localhost -U SA -P examlyMssql@123 -Q "BACKUP DATABASE appdb TO DISK = '/home/coder/project/workspace/backup5.bak'"
+
+hello
